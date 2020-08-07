@@ -8,11 +8,7 @@
 
 {% for field in form %}
     {% include 'partial/task_form.html' with form=field %}
-    {% endfor %}
-{#{% include 'partial/task_form.html' with form=form.name %}#}
-{#{% include 'partial/task_form.html' with form=form.description %}#}
-{#{% include 'partial/task_form.html' with form=form.status %}#}
-{#{% include 'partial/task_form.html' with form=form.create_at %}#}
+{% endfor %}
     <input type="submit" value="Добавить Задачу">
 </form>
 </div>

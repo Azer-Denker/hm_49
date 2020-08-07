@@ -1,7 +1,6 @@
 from django import forms
-from django.forms import DateInput
 
-from webapp.models import Status, Task_type, STATUS_CHOICE, TYPE_CHOICE
+from webapp.models import Status, Task_type
 
 
 class TaskForm(forms.Form):

@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import TemplateView, View
 
 from .forms import TaskForm
-from .models import Task, Status
+from .models import Task
 
 
 class IndexTemplateView(TemplateView):
@@ -28,7 +28,7 @@ class ViewTemplateView(TemplateView):
 
 class TaskCreateView(View):
     def get(self, request):
-        return render(request,'add_new.html', context={'form': TaskForm()})
+        return render(request, 'add_new.html', context={'form': TaskForm()})
 
     def post(self, request):
         form = TaskForm(data=request.POST)
@@ -97,6 +97,6 @@ class DeleteTemplateView(TemplateView):
         return redirect('index')
 
 def multi_delete(request):
-    data= request.POST.getlist('id')
+    data = request.POST.getlist('id')
     Task.objects.filter(pk__in=data).delete()
     return redirect('index')
